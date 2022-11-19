@@ -1,5 +1,7 @@
 {
   "dependencies": {
-    "flexboxgrid-sass": "^8.0.5"
+    "breakpoint-sass": "^3.0.0",
+    "flexboxgrid-sass": "^8.0.5",
+    "sass": "^1.56.1"
   }
 }
