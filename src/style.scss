@@ -1,5 +1,8 @@
+$scale: 1;
+
+@use "sass:math";
 @use 'flexboxgrid' with (
-    $flexboxgrid-max-width: 1400px,
+    $flexboxgrid-max-width: #{1400 * $scale}px,
     $gutter-width: 4rem,
     $outer-margin: 2rem
 );
@@ -23,6 +26,22 @@ $flexboxgrid-max-width: 1200px !default;
 
 $desktop: 1200px;
 $accent-color: #A66E4B;
+$rem: 16;                // for px to em calculations
+$rem_real: $rem * $scale; // what we actually set as the root. differs from above value to scale page.
+$rem_mobile: 8;
+$rem_mobile_real: $rem_mobile;
+
+@function em($px, $base: $rem) {
+    @return #{math.div($px, $base)}em;
+}
+
+@function emm($px) {
+    @return em($px, $rem_mobile);
+}
+
+@function px($em, $base) {
+    @return $base * $em;
+}
 
 //$breakpoints: add-breakpoint('mobile', (0rem 62rem));
 
@@ -31,9 +50,9 @@ $accent-color: #A66E4B;
     font-family: "acumin-pro";
     src: url("./acumin-pro.woff2") format("woff2"), url("./acumin-pro.woff") format("woff"), url("./acumin-pro.otf") format("opentype");
     font-display: auto;
-    font-style:normal;
-    font-weight:400;
-    font-stretch:normal;
+    font-style: normal;
+    font-weight: 400;
+    font-stretch: normal;
 }
 
 * {
@@ -42,10 +61,10 @@ $accent-color: #A66E4B;
 }
 
 html {
-    font-size: 8px;
+    font-size: #{$rem_mobile_real}px;
 
     @include breakpoint.breakpoint($desktop) {
-        font-size: 16px;
+        font-size: #{$rem_real}px;
     }
 }
 
@@ -63,7 +82,7 @@ h1 {
 
     @include breakpoint.breakpoint($desktop) {
         font-size: 6em;
-        margin-bottom: 100px;
+        margin-bottom: em(100, 6 * $rem);
     }
 
     text-transform: uppercase;
@@ -177,7 +196,7 @@ h1 {
     height: auto;
 
     @include breakpoint.breakpoint($desktop) {
-        height: 412px;
+        height: em(412);
         max-width: none;
     }
 }
@@ -222,7 +241,7 @@ h1 {
     @include breakpoint.breakpoint($desktop) {
         margin-top: 0;
         width: auto;
-        height: 550px;
+        height: em(548);
     }
 }
 
@@ -276,7 +295,7 @@ footer a {
 }
 
 .specialty img {
-    height: 66px;
+    height: emm(66);
     width: auto;
 
     @include breakpoint.breakpoint($desktop) {
