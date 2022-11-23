@@ -52,6 +52,21 @@
         </a>
       </div>
     </nav>
+    <script>
+      var toggle = document.getElementById('hamburger-toggle');
+      console.log(toggle);
+
+      window.addEventListener('hashchange', function() {
+        console.log('hello world');
+      });
+
+      document.querySelectorAll('.header-link')
+        .forEach(function(i) {
+            i.addEventListener('click', function() {
+              toggle.checked = false;
+            });
+        });
+    </script>
   </header>
   <main class="wrapper container-fluid">
     <div class="row bighead home-header">

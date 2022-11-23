@@ -346,7 +346,7 @@ header.wrapper {
 .header-link {
     text-transform: uppercase;
     font-size: emm(28);
-    line-height: emm(28);
+    //line-height: emm(28);
     display: block;
 
     @include breakpoint.breakpoint($desktop) {
@@ -391,14 +391,10 @@ header.wrapper {
         $tr_y: math.div($ham_line_width, 3) + math.div($ham_line_height, 2);
 
         .line-1 {
-            //transform: rotate(45deg) scaleX(1.5) translateY(emm(math.div($ham_line_width, 2))) translateX(emm($ham_line_height * 2));
-            //transform: rotate(45deg) scaleX(1.5);
             transform: translateY(emm($tr_y)) rotate(45deg) scaleX($scale_fac);
         }
 
         .line-3 {
-            //transform: rotate(-45deg) translateY(emm(0));
-            //transform: rotate(-45deg) scaleX(1.5) translateY(emm(-1 * math.div($ham_line_width, 2)));
             transform: translateY(emm(math.div(-$ham_line_width, 3))) rotate(-45deg) scaleX($scale_fac);
         }
 
@@ -425,9 +421,11 @@ header.wrapper {
 }
 
 .hamburger label {
-    padding-right: 2em;
-    padding-bottom: 2em;
     display: inline-block;
+    position: relative;
+    padding: 2em;
+    top: -2em;
+    left: -2em;
 }
 
 .hamburger .line {
@@ -436,7 +434,7 @@ header.wrapper {
     width: emm($ham_line_width);
     height: emm($ham_line_height);
     opacity: 1;
-    transition: all .5s linear;
+    transition: all .2s linear;
 }
 
 .large-nav {

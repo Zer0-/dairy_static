@@ -52,4 +52,14 @@
         </a>
       </div>
     </nav>
+    <script>
+      var toggle = document.getElementById('hamburger-toggle');
+
+      document.querySelectorAll('.header-link')
+        .forEach(function(i) {
+            i.addEventListener('click', function() {
+              toggle.checked = false;
+            });
+        });
+    </script>
   </header>
