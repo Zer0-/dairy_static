@@ -158,6 +158,10 @@ h1 {
     font-weight: 500;
 }
 
+.product-feature--arrow_link:hover {
+    cursor: pointer;
+}
+
 .circle_arrow {
     height: 24px;
     width: 24px;
@@ -167,7 +171,7 @@ h1 {
     //border-radius: 100%;
     margin-left: 0.25em;
     transform: scale(0.75);
-    //top: 0.5em;
+    top: 0.5em;
 
     @include breakpoint.breakpoint($desktop) {
         margin-left: 0.4em;
