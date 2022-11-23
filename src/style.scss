@@ -25,6 +25,7 @@ $flexboxgrid-max-width: 1200px !default;
 */
 
 $desktop: 1200px;
+$smol: 0px ($desktop - 1px);
 $accent-color: #A66E4B;
 $rem: 16;                // for px to em calculations
 $rem_real: $rem * $scale; // what we actually set as the root. differs from above value to scale page.
@@ -347,11 +348,14 @@ header.wrapper {
     }
 }
 
+.header-link-wrapper {
+    display: block;
+}
+
 .header-link {
     text-transform: uppercase;
     font-size: emm(28);
     //line-height: emm(28);
-    display: block;
 
     @include breakpoint.breakpoint($desktop) {
         font-size: em(18);
@@ -366,7 +370,7 @@ header.wrapper {
     }
 
     &:hover {
-        color: grey;
+        color: grey !important;
         text-decoration: none;
     }
 }
@@ -379,48 +383,52 @@ header.wrapper {
     display: none;
 
     &:checked ~ header {
-        height: 100vh;
-        background-color: black;
-        color: white;
-        a {
-            color: white;
-        }
+        @include breakpoint.breakpoint($smol) {
+            height: 100vh;
+            background-color: black;
 
-        .line {
-            background-color: white;
-        }
+            a {
+                color: white;
+            }
 
-        $w: $ham_line_width;
-        $scale_fac: math.sqrt(2*$w*$w) / $w;
-        $tr_y: math.div($ham_line_width, 3) + math.div($ham_line_height, 2);
+            .line {
+                background-color: white;
+            }
 
-        .line-1 {
-            transform: translateY(emm($tr_y)) rotate(45deg) scaleX($scale_fac);
-        }
+            $w: $ham_line_width;
+            $scale_fac: math.sqrt(2*$w*$w) / $w;
+            $tr_y: math.div($ham_line_width, 3) + math.div($ham_line_height, 2);
 
-        .line-3 {
-            transform: translateY(emm(math.div(-$ham_line_width, 3))) rotate(-45deg) scaleX($scale_fac);
-        }
+            .line-1 {
+                transform: translateY(emm($tr_y)) rotate(45deg) scaleX($scale_fac);
+            }
 
-        .line-2 {
-            opacity: 0;
-        }
+            .line-3 {
+                transform: translateY(emm(math.div(-$ham_line_width, 3))) rotate(-45deg) scaleX($scale_fac);
+            }
 
-        .nav-links {
-            display: flex;
-        }
+            .line-2 {
+                opacity: 0;
+            }
 
-        .logo-img--light {
-            display: none;
-        }
-        
-        .logo-img--dark {
-            display: block;
+            .nav-links {
+                display: flex;
+            }
+
+            .logo-img--light {
+                display: none;
+            }
+
+            .logo-img--dark {
+                display: block;
+            }
         }
     }
 
     &:checked ~ main {
-        display: none;
+        @include breakpoint.breakpoint($smol) {
+            display: none;
+        }
     }
 }
 
