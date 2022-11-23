@@ -7,26 +7,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+  <input type="checkbox" id="hamburger-toggle">
   <header class="wrapper container-fluid">
     <div class="row">
       <div class="col-xs-12">
         <div class="horizontal-line"></div>
       </div>
     </div>
-    <div class="row between-xs">
-      <div class="col-xs">
-        <a class="header-links" href="#applications">Applications</a>
-        <a class="header-links" href="#story">Story</a>
-        <a class="header-links" href="#distillery">Dairy Distillery</a>
-        <a class="header-links" href="#visit">Visit</a>
-        <a class="header-links" href="#contact">Contact</a>
+    <nav class="smol-nav row between-xs">
+      <div class="hamburger col-xs">
+        <label for="hamburger-toggle">
+          <div class="line line-1"></div>
+          <div class="line line-2"></div>
+          <div class="line line-3"></div>
+        </label>
       </div>
-      <div class="col-xs-3 logo-col">
+      <div class="col-xs-4 logo-col">
+        <a class="logo" href="homepage.html">
+          <img src="img/logo.svg" alt="logo" class="logo-img--light">
+          <img src="img/logo_dark.svg" alt="logo" class="logo-img--dark">
+        </a>
+      </div>
+    </nav>
+    <nav class="nav-links row">
+      <div class="col-xs">
+        <a class="header-link" href="#applications">Applications</a>
+        <a class="header-link" href="#story">Story</a>
+        <a class="header-link" href="#distillery">Dairy Distillery</a>
+        <a class="header-link" href="#visit">Visit</a>
+        <a class="header-link" href="#contact">Contact</a>
+      </div>
+    </nav>
+    <nav class="large-nav row between-xs">
+      <div class="col-xs">
+        <a class="header-link" href="#applications">Applications</a>
+        <a class="header-link" href="#story">Story</a>
+        <a class="header-link" href="#distillery">Dairy Distillery</a>
+        <a class="header-link" href="#visit">Visit</a>
+        <a class="header-link" href="#contact">Contact</a>
+      </div>
+      <div class="col-xs-4 logo-col">
         <a class="logo" href="homepage.html">
           <img src="img/logo.svg" alt="logo">
         </a>
       </div>
-    </div>
+    </nav>
   </header>
   <main class="wrapper container-fluid">
     <div class="row bighead home-header">
@@ -57,10 +82,7 @@
             <span class="product-feature--link_text">
               Shop Vodkow
               <a class="product-feature--arrow_link">
-                <div class="circle_arrow">
-                  <div class="circle_arrow--dash"></div>
-                  <div class="circle_arrow--pointy"></div>
-                </div>
+                <img class="circle_arrow" src="img/arrow_link.svg" alt="link">
               </a>
             </span>
           </div>
@@ -77,10 +99,7 @@
             <span class="product-feature--link_text">
               Learn More
               <a class="product-feature--arrow_link">
-                <div class="circle_arrow">
-                  <div class="circle_arrow--dash"></div>
-                  <div class="circle_arrow--pointy"></div>
-                </div>
+                <img class="circle_arrow" src="img/arrow_link.svg" alt="link">
               </a>
             </span>
           </div>
@@ -88,10 +107,7 @@
             <span class="product-feature--link_text">
               Shop Hand Sanitizer
               <a class="product-feature--arrow_link">
-                <div class="circle_arrow">
-                  <div class="circle_arrow--dash"></div>
-                  <div class="circle_arrow--pointy"></div>
-                </div>
+                <img class="circle_arrow" src="img/arrow_link.svg" alt="link">
               </a>
             </span>
           </div>
@@ -108,10 +124,7 @@
             <span class="product-feature--link_text">
               Learn More
               <a class="product-feature--arrow_link">
-                <div class="circle_arrow">
-                  <div class="circle_arrow--dash"></div>
-                  <div class="circle_arrow--pointy"></div>
-                </div>
+                <img class="circle_arrow" src="img/arrow_link.svg" alt="link">
               </a>
             </span>
           </div>
@@ -119,10 +132,7 @@
             <span class="product-feature--link_text">
               Shop Specialty Alcohols
               <a class="product-feature--arrow_link">
-                <div class="circle_arrow">
-                  <div class="circle_arrow--dash"></div>
-                  <div class="circle_arrow--pointy"></div>
-                </div>
+                <img class="circle_arrow" src="img/arrow_link.svg" alt="link">
               </a>
             </span>
           </div>
@@ -165,10 +175,7 @@
           <span class="product-feature--link_text">
             The Dairy Distillery Story
             <a class="product-feature--arrow_link">
-              <div class="circle_arrow">
-                <div class="circle_arrow--dash"></div>
-                <div class="circle_arrow--pointy"></div>
-              </div>
+              <img class="circle_arrow" src="img/arrow_link.svg" alt="link">
             </a>
           </span>
         </div>
@@ -182,10 +189,7 @@
           <span class="product-feature--link_text">
             Learn more about Vodkow
             <a class="product-feature--arrow_link">
-              <div class="circle_arrow">
-                <div class="circle_arrow--dash"></div>
-                <div class="circle_arrow--pointy"></div>
-              </div>
+              <img class="circle_arrow" src="img/arrow_link.svg" alt="link">
             </a>
           </span>
         </div>
@@ -202,10 +206,7 @@
           <span class="product-feature--link_text">
             Learn more about Dairy Distillery hand sanitizer
             <a class="product-feature--arrow_link">
-              <div class="circle_arrow">
-                <div class="circle_arrow--dash"></div>
-                <div class="circle_arrow--pointy"></div>
-              </div>
+              <img class="circle_arrow" src="img/arrow_link.svg" alt="link">
             </a>
           </span>
         </div>
@@ -222,10 +223,7 @@
           <span class="product-feature--link_text">
             Learn more about Vodkow
             <a class="product-feature--arrow_link">
-              <div class="circle_arrow">
-                <div class="circle_arrow--dash"></div>
-                <div class="circle_arrow--pointy"></div>
-              </div>
+              <img class="circle_arrow" src="img/arrow_link.svg" alt="link">
             </a>
           </span>
         </div>
@@ -273,10 +271,7 @@
           <span class="product-feature--link_text">
             $10/person - tours run with a minimum of 2 and maximum of 8 people. Click to book.
             <a class="product-feature--arrow_link">
-              <div class="circle_arrow">
-                <div class="circle_arrow--dash"></div>
-                <div class="circle_arrow--pointy"></div>
-              </div>
+              <img class="circle_arrow" src="img/arrow_link.svg" alt="link">
             </a>
           </span>
         </div>
@@ -299,10 +294,7 @@
           <span class="product-feature--link_text">
             $10/person - tours run with a minimum of 2 and maximum of 8 people. Click to book.
             <a class="product-feature--arrow_link">
-              <div class="circle_arrow">
-                <div class="circle_arrow--dash"></div>
-                <div class="circle_arrow--pointy"></div>
-              </div>
+              <img class="circle_arrow" src="img/arrow_link.svg" alt="link">
             </a>
           </span>
         </div>

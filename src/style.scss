@@ -30,6 +30,8 @@ $rem: 16;                // for px to em calculations
 $rem_real: $rem * $scale; // what we actually set as the root. differs from above value to scale page.
 $rem_mobile: 8;
 $rem_mobile_real: $rem_mobile;
+$ham_line_width: 20;
+$ham_line_height: 4;
 
 @function em($px, $base: $rem) {
     @return #{math.div($px, $base)}em;
@@ -56,7 +58,7 @@ $rem_mobile_real: $rem_mobile;
 }
 
 * {
-    outline: 1px solid red;
+    //outline: 1px solid red;
     box-sizing: border-box;
 }
 
@@ -159,13 +161,13 @@ h1 {
 .circle_arrow {
     height: 24px;
     width: 24px;
-    background-color: $accent-color;
+    //background-color: $accent-color;
     position: relative;
     display: inline-block;
-    border-radius: 100%;
+    //border-radius: 100%;
     margin-left: 0.25em;
     transform: scale(0.75);
-    top: 0.5em;
+    //top: 0.5em;
 
     @include breakpoint.breakpoint($desktop) {
         margin-left: 0.4em;
@@ -308,6 +310,11 @@ footer p {
 header .horizontal-line {
     margin-top: em(36);
     margin-bottom: em(22);
+    display: none;
+
+    @include breakpoint.breakpoint($desktop) {
+        display: block;
+    }
 }
 
 header .logo-col {
@@ -315,20 +322,38 @@ header .logo-col {
 }
 
 header .logo {
+    display: block;
     margin-left: auto;
     border: none;
 }
 
-.header-links {
+header .logo img {
+    width: emm(74);
+    height: emm(71);
+
+    @include breakpoint.breakpoint($desktop) {
+        width: em(123);
+        height: em(122);
+    }
+}
+
+header.wrapper {
+    @include breakpoint.breakpoint($desktop) {
+        margin-bottom: em(30);
+    }
+}
+
+.header-link {
     text-transform: uppercase;
     font-size: emm(28);
-    line-height: emm(44);
-    display: none;
+    line-height: emm(28);
+    display: block;
 
     @include breakpoint.breakpoint($desktop) {
         font-size: em(18);
         line-height: em(18);
         margin-right: em(36);
+        display: inline;
     }
 
     &:link, &:visited, &:active {
@@ -340,4 +365,101 @@ header .logo {
         color: grey;
         text-decoration: none;
     }
+}
+
+.hamburger {
+    display: block;
+}
+
+#hamburger-toggle {
+    display: none;
+
+    &:checked ~ header {
+        height: 100vh;
+        background-color: black;
+        color: white;
+        a {
+            color: white;
+        }
+
+        .line {
+            background-color: white;
+        }
+
+        $w: $ham_line_width;
+        $scale_fac: math.sqrt(2*$w*$w) / $w;
+        $tr_y: math.div($ham_line_width, 3) + math.div($ham_line_height, 2);
+
+        .line-1 {
+            //transform: rotate(45deg) scaleX(1.5) translateY(emm(math.div($ham_line_width, 2))) translateX(emm($ham_line_height * 2));
+            //transform: rotate(45deg) scaleX(1.5);
+            transform: translateY(emm($tr_y)) rotate(45deg) scaleX($scale_fac);
+        }
+
+        .line-3 {
+            //transform: rotate(-45deg) translateY(emm(0));
+            //transform: rotate(-45deg) scaleX(1.5) translateY(emm(-1 * math.div($ham_line_width, 2)));
+            transform: translateY(emm(math.div(-$ham_line_width, 3))) rotate(-45deg) scaleX($scale_fac);
+        }
+
+        .line-2 {
+            opacity: 0;
+        }
+
+        .nav-links {
+            display: flex;
+        }
+
+        .logo-img--light {
+            display: none;
+        }
+        
+        .logo-img--dark {
+            display: block;
+        }
+    }
+
+    &:checked ~ main {
+        display: none;
+    }
+}
+
+.hamburger label {
+    padding-right: 2em;
+    padding-bottom: 2em;
+    display: inline-block;
+}
+
+.hamburger .line {
+    margin-bottom: emm(4);
+    background-color: black;
+    width: emm($ham_line_width);
+    height: emm($ham_line_height);
+    opacity: 1;
+    transition: all .5s linear;
+}
+
+.large-nav {
+    display: none;
+
+    @include breakpoint.breakpoint($desktop) {
+        display: flex;
+    }
+}
+
+.smol-nav {
+    display: flex;
+    margin-top: emm(13);
+
+    @include breakpoint.breakpoint($desktop) {
+        display: none;
+    }
+}
+
+.nav-links {
+    display: none;
+}
+
+.logo-img--dark {
+    display: none;
 }
