@@ -5,6 +5,8 @@
   <link href="style.css" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="flickity/flickity.pkgd.js" defer></script>
+  <script src="script.js" defer></script>
 </head>
 <body>
   <input type="checkbox" id="hamburger-toggle">
@@ -52,16 +54,6 @@
         </a>
       </div>
     </nav>
-    <script>
-      var toggle = document.getElementById('hamburger-toggle');
-
-      document.querySelectorAll('.header-link')
-        .forEach(function(i) {
-            i.addEventListener('click', function() {
-              toggle.checked = false;
-            });
-        });
-    </script>
   </header>
   <main class="wrapper container-fluid">
     <div class="row bighead home-header">
@@ -163,11 +155,59 @@
       </div>
       <div class="col-xs-12 col-lg-6">
         <p class="story">Dairy Distillery founder Omid McDonald is an eclectic serial entrepreneur whose past start-ups range from medical devices to software for DJs. He became enamored with distilling while visiting a micro-distillery in Charleston, South Carolina. It wasn’t long until Omid started making moonshine in his basement with a copper pot still he hand built. In 2016, Omid was talking to his cousin, Neal McCarten, who just returned from a visit to his uncle Jim Nelson’s dairy farm. Jim described how a dairy by-product was being dumped and Omid wondered if it could be turned into alcohol. So began the story of Dairy Distillery.</p>
+        <div class="product-feature--link">
+          <span class="product-feature--link_text">
+            Learn more about vodkow
+            <a class="product-feature--arrow_link">
+              <img class="circle_arrow" src="img/arrow_link.svg" alt="link">
+            </a>
+          </span>
+        </div>
       </div>
     </div>
     <div class="row">
-      <div class="col-xs-12">
-        <div class="slideshow"><h1>Slides Carrousel [WIP]</h1></div>
+      <div class="col-xs">
+        <div class="slideshow-header-border"></div>
+      </div>
+    </div>
+    <div class="row middle-xs">
+      <div class="col-xs-4">
+        <div class="slideshow-arrow slideshow-arrow--left"><img src="img/arrow.svg" alt="arrow-left"></div><div class="slideshow-arrow slideshow-arrow--right"><img src="img/arrow.svg" alt="arrow-right"></div>
+      </div>
+      <div class="col-xs-4 center-xs">
+        <span class="slideshow-progress">
+          <span class="slideshow-idx">1</span><span>/</span><span class="slideshow-slide-count">3</span>
+        </span>
+      </div>
+      <div class="col-xs-4">
+        <!-- blank -->
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs">
+        <div class="slideshow-header-border"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs slideshow main-carousel">
+        <div class="slide carousel-cell">
+          <div class="slide-content">
+            <h1>A Sea of Lactose</h1>
+            <p>People are drinking less fluid milk but are eating more cheese and yogurt. This shift has created a surplus of lactose in the form of dairy by-products such as whey and milk permeate. While there are some high value uses for lactose in food and pharmaceutical production, these applications can’t come close to consuming the lactose produced annually. For this reason most whey and milk permeate is used for low value animal feed or discarded.</p>
+          </div>
+        </div>
+        <div class="slide carousel-cell">
+          <div class="slide-content">
+            <h1>Powering cars with w</h1>
+            <p>During the oil crisis of the 1970s, several ethanol plants in the United States were built to convert whey into ethanol for transport fuel. As the oil crises subsided, these plants couldn’t compete with high volume corn ethanol producers and were decommissioned. Since then, many dairy processors in North America have invested heavily in dryers to facilitate the shipping of milk/whey permeate to China for animal feed.</p>
+          </div>
+        </div>
+        <div class="slide carousel-cell">
+          <div class="slide-content">
+            <h1>A Sea of Lactose</h1>
+            <p>People are drinking less fluid milk but are eating more cheese and yogurt. This shift has created a surplus of lactose in the form of dairy by-products such as whey and milk permeate. While there are some high value uses for lactose in food and pharmaceutical production, these applications can’t come close to consuming the lactose produced annually. For this reason most whey and milk permeate is used for low value animal feed or discarded.</p>
+          </div>
+        </div>
       </div>
     </div>
     <div class="row">

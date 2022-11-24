@@ -3,7 +3,7 @@
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 pushd $SCRIPT_DIR
 
-export SASS_PATH=node_modules/flexboxgrid-sass:node_modules/breakpoint-sass/stylesheets
+export SASS_PATH=node_modules/flexboxgrid-sass:node_modules/breakpoint-sass/stylesheets:node_modules/flickity/dist
 
 ./node_modules/.bin/sass src:target
 
@@ -21,3 +21,5 @@ cat ./src/footer.html >> ./target/specialty_alcohols.html
 
 cp -v ./src/acumin-pro* ./target
 cp -rv ./src/img ./target
+cp -v ./src/*js ./target
+cp -rv ./node_modules/flickity/dist ./target/flickity

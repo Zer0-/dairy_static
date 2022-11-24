@@ -5,6 +5,8 @@
   <link href="style.css" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="flickity/flickity.pkgd.js" defer></script>
+  <script src="script.js" defer></script>
 </head>
 <body>
   <input type="checkbox" id="hamburger-toggle">
@@ -52,14 +54,4 @@
         </a>
       </div>
     </nav>
-    <script>
-      var toggle = document.getElementById('hamburger-toggle');
-
-      document.querySelectorAll('.header-link')
-        .forEach(function(i) {
-            i.addEventListener('click', function() {
-              toggle.checked = false;
-            });
-        });
-    </script>
   </header>
