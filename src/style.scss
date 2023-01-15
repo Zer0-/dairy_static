@@ -1,4 +1,4 @@
-$scale: 1;
+$scale: 0.9;
 
 @use "sass:math";
 @use 'flexboxgrid' with (
@@ -105,10 +105,11 @@ h1 {
 }
 
 .embed-video {
-    background-color: grey;
     width: 100%;
-    padding-top: 58%;
+    padding-bottom: 75%;
     border-radius: 1.75em;
+    background-image: url('./img/dairy_distillery_front.jpg');
+    background-size: cover;
 }
 
 .video-caption {
@@ -215,6 +216,10 @@ h1 {
         height: em(412);
         max-width: none;
     }
+}
+
+.product-feature--move_down {
+    margin-top: 2em;
 }
 
 .product-feature {
@@ -511,24 +516,30 @@ header.wrapper {
 .slideshow {
   margin-top: em(36);
   margin-bottom: em(36);
-  max-height: em(720);
+  max-height: emm(405);
+
+  @include breakpoint.breakpoint($desktop) {
+    max-height: em(720);
+  }
 }
 
 .slide {
   background-color: black;
   color: white;
-  $p: math.div(2, 3);
-
   width: 80%;
 
   @include breakpoint.breakpoint($desktop) {
     width: math.div(100%, 3) * 2;
+    height: em(720);
+    padding: em(48);
+    border-radius: em(36);
+    margin-right: em(34);
   }
 
-  height: em(720);
-  padding: em(48);
-  border-radius: em(36);
-  margin-right: em(34);
+  height: emm(405);
+  padding: emm(20);
+  margin-right: emm(14);
+  border-radius: emm(12);
 }
 
 .slide:last-child {
