@@ -542,6 +542,33 @@ header.wrapper {
   border-radius: emm(12);
 }
 
+.slide--milk_splash {
+  background-image: url('./img/milk_splash.jpg');
+  background-size: contain;
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+
+.slide--gas_station {
+  background-image: url('./img/gas_station.jpg');
+  background-size: 80%;
+  background-position: right bottom -2em;
+  background-repeat: no-repeat;
+}
+
+.slide--molecule {
+  background-image: url('./img/molecule.jpg');
+  background-size: contain;
+  background-size: 90%;
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+
+.slide--molecule p {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+
 .slide:last-child {
   margin-right: 0;
 }

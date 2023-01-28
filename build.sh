@@ -23,3 +23,4 @@ cp -v ./src/acumin-pro* ./target
 cp -rv ./src/img ./target
 cp -v ./src/*js ./target
 cp -rv ./node_modules/flickity/dist ./target/flickity
+cp ./src/favicon.ico ./target
