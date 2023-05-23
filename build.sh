@@ -19,6 +19,10 @@ cat ./src/head.html > ./target/specialty_alcohols.html
 cat ./src/specialty_alcohols.html >> ./target/specialty_alcohols.html
 cat ./src/footer.html >> ./target/specialty_alcohols.html
 
+cat ./src/head.html > ./target/MMPA.html
+cat ./src/MMPA.html >> ./target/MMPA.html
+cat ./src/footer.html >> ./target/MMPA.html
+
 cp -v ./src/acumin-pro* ./target
 cp -rv ./src/img ./target
 cp -v ./src/*js ./target
